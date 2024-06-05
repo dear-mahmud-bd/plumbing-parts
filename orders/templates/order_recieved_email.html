@@ -1,0 +1,67 @@
+{% autoescape off %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Order Confirmation</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #318b9b;
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                max-width: 600px;
+                margin: 20px auto;
+                background-color: #5dc1d379;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            .header h2 {
+                color: #288ea7;
+            }
+            .order-info {
+                margin-bottom: 30px;
+            }
+            .order-info p {
+                margin: 5px 0;
+            }
+            .button {
+                text-align: center;
+            }
+            .button a {
+                display: inline-block;
+                background-color: #287fa7;
+                color: #fff;
+                text-decoration: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+            }
+            .button a:hover {
+                background-color: #237488a4;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h2>Hi {{ user.first_name }} {{user.last_name}},</h2>
+                <h3>Your Order Has Been Received</h3>
+            </div>
+            <div class="order-info">
+                <p>Order Number: {{ order.order_number }}</p>
+            </div>
+            <div class="button">
+                <a href="">Shop More</a>
+            </div>
+        </div>
+    </body>
+</html>
+{% endautoescape %}
